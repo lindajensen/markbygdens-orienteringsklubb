@@ -1,7 +1,7 @@
 :root {
-  /* --primary: #; */
-  /* --secondary: ; */
-  /* --accent: ; */
+  --primary: #3d7021;
+  --secondary: #f59e0b;
+  --accent: #0ea5e9;
   --warning: #f26e56;
   --error: #dc2626;
 
