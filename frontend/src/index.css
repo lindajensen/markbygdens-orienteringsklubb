@@ -1,8 +1,8 @@
 :root {
-  --primary: #3d7021;
-  --primary2: #ffe01b;
-  --secondary: #f59e0b;
-  --accent: #0ea5e9;
+  --primary-color: #3d7021;
+  /* --primary2-color: #ffe01b; */
+  --secondary-color: #f59e0b;
+  --accent-color: #0ea5e9;
   --warning: #f26e56;
   --error: #dc2626;
 
