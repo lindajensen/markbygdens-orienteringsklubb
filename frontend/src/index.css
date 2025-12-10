@@ -1,5 +1,6 @@
 :root {
   --primary: #3d7021;
+  --primary2: #ffe01b;
   --secondary: #f59e0b;
   --accent: #0ea5e9;
   --warning: #f26e56;
@@ -8,6 +9,8 @@
   --bg-body: #fffdf7;
   --text-dark: #1a1a1a;
   --text-muted: #6b6b6b;
+
+  --border-color: #c8c4bc;
 
   --font-headings: "Merriweather", serif;
   --font-body: "Source Sans 3", sans-serif;
@@ -71,4 +74,14 @@ ul {
 img {
   max-width: 100%;
   display: block;
+}
+
+.layout {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.layout__content {
+  flex: 1;
 }
