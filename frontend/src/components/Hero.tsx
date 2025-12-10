@@ -1,0 +1,20 @@
+import { Link } from "react-router-dom";
+import hero from "../assets/img/hero-img.webp";
+import "./Hero.css";
+
+function Hero() {
+  return (
+    <section className="hero" style={{ backgroundImage: `url(${hero})` }}>
+      <div className="hero__overlay"></div>
+      <div className="hero__content">
+        <h1 className="hero__title">Välkommen till Markbygdens OK</h1>
+        <p className="hero__subtitle">Orientering i Västergötland</p>
+        <Link to="/contact" className="hero__button">
+          Kontakta oss
+        </Link>
+      </div>
+    </section>
+  );
+}
+
+export default Hero;
