@@ -59,14 +59,18 @@ function Header() {
             isMenuOpen ? "header__hamburger--open" : ""
           }`}
           onClick={() => setIsMenuOpen(!isMenuOpen)}
-          aria-label="Öppna meny"
+          aria-label={isMenuOpen ? "Stäng meny" : "Öppna meny"}
+          aria-expanded={isMenuOpen}
         >
           <span className="header__hamburger-line"></span>
           <span className="header__hamburger-line"></span>
           <span className="header__hamburger-line"></span>
         </button>
 
-        <nav className={`header__nav ${isMenuOpen ? "header__nav--open" : ""}`}>
+        <nav
+          className={`header__nav ${isMenuOpen ? "header__nav--open" : ""}`}
+          aria-label="Huvudnavigation"
+        >
           <ul className="header__nav-list">
             <li className="header__nav-item">
               <Link to="/news" className="header__nav-link">
@@ -91,6 +95,8 @@ function Header() {
                 className="header__nav-link header__nav-link--dropdown"
                 onClick={() => toggleDropdown("om-markbygden")}
                 aria-expanded={activeDropdown === "om-markbygden"}
+                aria-controls="dropdown-om-markbygden"
+                aria-haspopup="true"
               >
                 Om Markbygden
                 <IoChevronDown
@@ -102,7 +108,11 @@ function Header() {
                 />
               </button>
               {activeDropdown === "om-markbygden" && (
-                <ul className="header__dropdown">
+                <ul
+                  className="header__dropdown"
+                  id="dropdown-om-markbygden"
+                  role="menu"
+                >
                   <li className="header__dropdown-item">
                     <Link
                       to="/about/board"
@@ -130,6 +140,8 @@ function Header() {
                 className="header__nav-link header__nav-link--dropdown"
                 onClick={() => toggleDropdown("arrangemang")}
                 aria-expanded={activeDropdown === "arrangemang"}
+                aria-controls="dropdown-arrangemang"
+                aria-haspopup="true"
               >
                 Arrangemang
                 <IoChevronDown
@@ -142,7 +154,11 @@ function Header() {
               </button>
 
               {activeDropdown === "arrangemang" && (
-                <ul className="header__dropdown">
+                <ul
+                  className="header__dropdown"
+                  id="dropdown-arrangemang"
+                  role="menu"
+                >
                   <li className="header__dropdown-item">
                     <Link
                       to="/about/board"
