@@ -9,9 +9,9 @@ function Hero() {
       <div className="hero__content">
         <h1 className="hero__title">Välkommen till Markbygdens OK</h1>
         <p className="hero__subtitle">Orientering i Västergötland</p>
-        <Link to="/contact" className="hero__button">
+        <a href="#contact" className="hero__button">
           Kontakta oss
-        </Link>
+        </a>
       </div>
     </section>
   );
