@@ -1,0 +1,79 @@
+/* Mobile first */
+.sponsors {
+  max-width: 1200px;
+  margin: 4rem auto;
+  padding: 0 1rem;
+}
+
+.sponsors__title {
+  text-align: center;
+  font-size: clamp(1.8rem, 5vw, 2.5rem);
+  margin-bottom: 3rem;
+  color: #1a1a1a;
+}
+
+.sponsors__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+}
+
+.sponsors__card {
+  background: white;
+  padding: 2rem 1.5rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem;
+  transition: all 0.3s ease;
+  min-height: 200px;
+}
+
+.sponsors__card img {
+  max-width: 100%;
+  height: auto;
+  max-height: 80px;
+  transition: filter 0.3s ease;
+}
+
+.sponsors__name {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #1a1a1a;
+  text-align: center;
+}
+
+@media (min-width: 1000px) {
+  .sponsors {
+    padding: 0 2rem;
+  }
+
+  .sponsors__grid {
+    gap: 2rem;
+  }
+
+  .sponsors__card {
+    padding: 3rem 2rem;
+    min-height: 220px;
+  }
+
+  .sponsors__card img {
+    filter: grayscale(100%);
+  }
+
+  .sponsors__name {
+    font-size: 1.1rem;
+  }
+
+  .sponsors__card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+  }
+
+  .sponsors__card:hover img {
+    filter: grayscale(0%);
+  }
+}
