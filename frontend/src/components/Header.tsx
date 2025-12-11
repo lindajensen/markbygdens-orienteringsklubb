@@ -2,7 +2,7 @@ import { useEffect, useRef, useState } from "react";
 import { Link } from "react-router-dom";
 
 import { IoChevronDown } from "react-icons/io5";
-import logo from "../assets/img/logo.jpg";
+import logo from "../assets/images/logo.jpg";
 import "./Header.css";
 
 function Header() {

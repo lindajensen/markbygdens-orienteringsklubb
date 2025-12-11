@@ -1,7 +1,7 @@
-import icaKvantum from "../assets/img/ica-kvantum-skene.webp";
-import bilkonsulten from "../assets/img/bilkonsulten.png";
-import sparbanken from "../assets/img/sparbanken-sjuharad.webp";
-import markbladet from "../assets/img/markbladet.png";
+import icaKvantum from "../assets/images/sponsors/ica-kvantum-skene.webp";
+import bilkonsulten from "../assets/images/sponsors/bilkonsulten.png";
+import sparbanken from "../assets/images/sponsors/sparbanken-sjuharad.webp";
+import markbladet from "../assets/images/sponsors/markbladet.png";
 
 import "./Sponsors.css";
 
