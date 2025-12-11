@@ -73,19 +73,31 @@ function Header() {
         >
           <ul className="header__nav-list">
             <li className="header__nav-item">
-              <Link to="/news" className="header__nav-link">
+              <Link
+                to="/news"
+                className="header__nav-link"
+                onClick={() => setIsMenuOpen(false)}
+              >
                 Nyheter
               </Link>
             </li>
 
             <li className="header__nav-item">
-              <Link to="/images-videos" className="header__nav-link">
+              <Link
+                to="/images-videos"
+                className="header__nav-link"
+                onClick={() => setIsMenuOpen(false)}
+              >
                 Bilder & Videos
               </Link>
             </li>
 
             <li className="header__nav-item">
-              <Link to="/sponsors" className="header__nav-link">
+              <Link
+                to="/sponsors"
+                className="header__nav-link"
+                onClick={() => setIsMenuOpen(false)}
+              >
                 Sponsorer
               </Link>
             </li>
