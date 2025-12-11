@@ -50,7 +50,11 @@ function Header() {
   return (
     <header className="header" ref={headerRef}>
       <div className="header__container">
-        <Link to="/" className="header__logo">
+        <Link
+          to="/"
+          className="header__logo"
+          onClick={() => setIsMenuOpen(false)}
+        >
           <img src={logo} alt="Markbygdens OK" />
         </Link>
 
