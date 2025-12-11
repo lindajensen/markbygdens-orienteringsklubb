@@ -1,10 +1,10 @@
+import { Link, useParams } from "react-router-dom";
+
 import PageHero from "../components/PageHero";
 // import imagesVideosHero from "../assets/images/heroes/images-videos-hero.webp";
 import imagesVideosHero from "../assets/images/heroes/images-videos-hero.jpg";
-import sprintByNight from "../assets/images/gallery/sprint-by-night.webp";
-import zoorientering from "../assets/images/gallery/zoorientering.webp";
-
-import "./ImagesVideos.css";
+import sprintByNight from "../assets/images/gallery/sprint-by-night/hero.webp";
+import zoorientering from "../assets/images/gallery/zoorientering/hero.webp";
 
 function ImagesVideos() {
   return (
@@ -13,7 +13,7 @@ function ImagesVideos() {
 
       <section className="gallery">
         <div className="gallery__grid">
-          <a href="#" className="gallery__card">
+          <Link to="/images-videos/sprint-by-night" className="gallery__card">
             <img
               src={sprintByNight}
               alt="Deltagare i Sprint by Night evenemanget"
@@ -22,9 +22,9 @@ function ImagesVideos() {
               <p className="gallery__event">O-event · Dag 1</p>
               <h2 className="gallery__title">Sprint by Night</h2>
             </div>
-          </a>
+          </Link>
 
-          <a href="#" className="gallery__card">
+          <Link to="/images-videos/downhill-sprint" className="gallery__card">
             <div className="gallery__placeholder">
               <p>Bilder kommer snart</p>
             </div>
@@ -32,9 +32,9 @@ function ImagesVideos() {
               <p className="gallery__event">O-event · Dag 2</p>
               <h2 className="gallery__title">Downhill Sprint</h2>
             </div>
-          </a>
+          </Link>
 
-          <a href="#" className="gallery__card">
+          <Link to="/images-videos/zoorientering" className="gallery__card">
             <img
               src={zoorientering}
               alt="Deltagare i Zoorienterings evenemanget"
@@ -43,7 +43,7 @@ function ImagesVideos() {
               <p className="gallery__event">O-event · Dag 3</p>
               <h2 className="gallery__title">Zoorientering</h2>
             </div>
-          </a>
+          </Link>
         </div>
       </section>
     </>
