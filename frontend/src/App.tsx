@@ -10,6 +10,7 @@ import HomePage from "./pages/HomePage";
 import ImagesVideos from "./pages/ImagesVideos";
 import EventGallery from "./pages/EventGallery";
 import Sponsors from "./pages/Sponsors";
+import Board from "./pages/Board";
 import "./App.css";
 
 const router = createBrowserRouter(
@@ -19,6 +20,7 @@ const router = createBrowserRouter(
       <Route path="/images-videos" element={<ImagesVideos />} />
       <Route path="/images-videos/:slug" element={<EventGallery />} />
       <Route path="/sponsors" element={<Sponsors />} />
+      <Route path="/about/board" element={<Board />} />
     </Route>
   )
 );

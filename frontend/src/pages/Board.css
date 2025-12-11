@@ -1,0 +1,54 @@
+.board {
+  max-width: 1200px;
+  margin: 3rem auto 6rem;
+  padding: 0 1rem;
+}
+
+.board__title {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 3rem;
+}
+
+.board__section {
+  margin-bottom: 3rem;
+}
+
+.board__section-title {
+  font-size: clamp(1.25rem, 3vw, 2rem);
+  margin-bottom: 1.5rem;
+  color: var(--primary-color);
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid var(--primary-color);
+}
+
+.board__item {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid #eee;
+  padding: 1.5rem 0;
+}
+
+.board__item:last-child {
+  border-bottom: none;
+}
+
+.board__role {
+  font-weight: 600;
+  min-width: 150px;
+}
+
+.board__members {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.board__member {
+  padding: 1rem 0;
+  border-bottom: 1px solid #eee;
+}
+
+.board__member:last-child {
+  border-bottom: none;
+}
