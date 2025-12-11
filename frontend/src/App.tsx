@@ -12,6 +12,7 @@ import EventGallery from "./pages/EventGallery";
 import Sponsors from "./pages/Sponsors";
 import Board from "./pages/Board";
 import "./App.css";
+import Startorienteering from "./pages/Startorienteering";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -21,6 +22,7 @@ const router = createBrowserRouter(
       <Route path="/images-videos/:slug" element={<EventGallery />} />
       <Route path="/sponsors" element={<Sponsors />} />
       <Route path="/about/board" element={<Board />} />
+      <Route path="/about/start-orienteering" element={<Startorienteering />} />
     </Route>
   )
 );
