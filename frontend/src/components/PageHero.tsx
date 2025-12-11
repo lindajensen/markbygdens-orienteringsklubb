@@ -1,14 +1,15 @@
 import "./PageHero.css";
 
 interface PageHeroProps {
-  imageUrl: string;
+  imageUrl?: string;
   title: string;
   subtitle?: string;
+  dark?: boolean;
 }
 
-function PageHero({ imageUrl, title, subtitle }: PageHeroProps) {
+function PageHero({ imageUrl, title, subtitle, dark = false }: PageHeroProps) {
   return (
-    <section className="page-hero">
+    <section className={`page-hero ${dark ? "page-hero--dark" : ""}`}>
       <img src={imageUrl} alt="" className="page-hero__image" />
       <div className="page-hero__overlay">
         <h1 className="page-hero__title">{title}</h1>
