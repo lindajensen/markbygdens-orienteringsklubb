@@ -147,6 +147,15 @@ function Header() {
                       Börja orientera
                     </Link>
                   </li>
+                  <li className="header__dropdown-item">
+                    <Link
+                      to="/about/orienteering-map"
+                      className="header__dropdown-link"
+                      onClick={() => setIsMenuOpen(false)}
+                    >
+                      Orienteringskartan
+                    </Link>
+                  </li>
                 </ul>
               )}
             </li>
