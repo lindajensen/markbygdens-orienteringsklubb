@@ -186,7 +186,7 @@ function Header() {
                 >
                   <li className="header__dropdown-item">
                     <Link
-                      to="/about/board"
+                      to="/events/trainings"
                       className="header__dropdown-link"
                       onClick={() => setIsMenuOpen(false)}
                     >
@@ -196,7 +196,7 @@ function Header() {
 
                   <li className="header__dropdown-item">
                     <Link
-                      to="/about/start-orienteering"
+                      to="/events/competitions"
                       className="header__dropdown-link"
                       onClick={() => setIsMenuOpen(false)}
                     >
@@ -230,7 +230,7 @@ function Header() {
 
                   <li className="header__dropdown-item">
                     <Link
-                      to="/about/start-orienteering"
+                      to="/events/orienteering-links"
                       className="header__dropdown-link"
                       onClick={() => setIsMenuOpen(false)}
                     >
@@ -240,7 +240,7 @@ function Header() {
 
                   <li className="header__dropdown-item">
                     <Link
-                      to="/about/start-orienteering"
+                      to="/events/courses-of-the-month-2024"
                       className="header__dropdown-link"
                       onClick={() => setIsMenuOpen(false)}
                     >
