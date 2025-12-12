@@ -16,7 +16,12 @@ function OrienteeringLinks() {
         <div className="links__section">
           <h2 className="links__section-title">Förbund</h2>
           <div className="links__list">
-            <a href="" className="links__item">
+            <a
+              href="https://www.orientering.se/"
+              className="links__item"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               <div className="links__logo">
                 <img src={soft} alt="Svenska Orienteringsförbundet" />
               </div>
@@ -29,7 +34,7 @@ function OrienteeringLinks() {
             </a>
 
             <a
-              href="https://www.orienteering.sport/"
+              href="https://orienteering.sport/"
               target="_blank"
               rel="noopener noreferrer"
               className="links__item"
@@ -53,7 +58,7 @@ function OrienteeringLinks() {
           <h2 className="links__section-title">Klubbar</h2>
           <div className="links__list">
             <a
-              href="#"
+              href="https://frolundaol.se/"
               target="_blank"
               rel="noopener noreferrer"
               className="links__item"
