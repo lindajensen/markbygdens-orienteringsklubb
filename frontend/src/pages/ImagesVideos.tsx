@@ -1,10 +1,11 @@
-import { Link, useParams } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 import PageHero from "../components/PageHero";
-// import imagesVideosHero from "../assets/images/heroes/images-videos-hero.webp";
 import imagesVideosHero from "../assets/images/heroes/images-videos-hero.jpg";
 import sprintByNight from "../assets/images/gallery/sprint-by-night/hero.webp";
 import zoorientering from "../assets/images/gallery/zoorientering/hero.webp";
+
+import "./ImagesVideos.css";
 
 function ImagesVideos() {
   return (
