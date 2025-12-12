@@ -23,7 +23,7 @@
 .contact__item {
   margin-bottom: 2rem;
   padding: 1.5rem;
-  background: #fafafa;
+  background: var(--accent-color);
   border-radius: 8px;
   transition: background 0.3s ease;
 }

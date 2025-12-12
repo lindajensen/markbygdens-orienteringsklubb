@@ -60,7 +60,7 @@
   text-align: center;
   margin-top: 3rem;
   padding: 3rem;
-  /* background-color: #fafafa; */
+  background-color: #fafafa;
   background-color: var(--accent-color);
   border-radius: 8px;
 }
