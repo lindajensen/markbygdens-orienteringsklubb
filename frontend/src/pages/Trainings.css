@@ -1,0 +1,60 @@
+.trainings {
+  max-width: 1200px;
+  margin: 3rem auto;
+  padding: 0 1rem;
+}
+
+.trainings__intro {
+  font-size: clamp(1rem, 1.5vw + 0.5rem, 1.2rem);
+  color: var(--text-muted);
+  max-width: 800px;
+  margin: 0 auto 2rem;
+  text-align: center;
+}
+
+.trainings__months {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}
+
+.trainings__month {
+  background-color: var(--accent-color);
+  padding: 2rem;
+  border-radius: 8px;
+}
+
+.trainings__month-title {
+  color: var(--primary-color);
+  margin-bottom: 2rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid var(--primary-color);
+}
+
+.trainings__events {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.trainings__event {
+  background-color: #fff;
+  padding: 1.5rem;
+  border-radius: 8px;
+  border-left: 4px solid var(--primary-color);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.trainings__event-header {
+  margin-bottom: 0.75rem;
+}
+
+.trainings__event-date {
+  font-weight: 600;
+  color: var(--primary-color);
+  font-size: 1.1rem;
+}
+
+.trainings__event-description {
+  line-height: 1.6;
+}
