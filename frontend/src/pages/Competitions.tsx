@@ -30,7 +30,7 @@ function Competitions() {
         </div>
 
         <div className="competitions__cta">
-          <h2 className="competitions__cta-title">Redo att anmäla dig?</h2>
+          <h3 className="competitions__cta-title">Redo att anmäla dig?</h3>
           <p className="competitions__cta-text">
             Besök Eventor för att se kommande tävlingar och anmäla dig.
           </p>

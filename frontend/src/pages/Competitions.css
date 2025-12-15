@@ -5,7 +5,6 @@
 }
 
 .competitions__title {
-  font-size: clamp(2rem, 5vw, 3rem);
   margin-bottom: 2rem;
 }
 
@@ -24,7 +23,6 @@
 }
 
 .competitions__cta-title {
-  font-size: 1.3rem;
   font-weight: 600;
   margin-bottom: 1rem;
 }

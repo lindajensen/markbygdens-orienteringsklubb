@@ -16,6 +16,7 @@ import Startorienteering from "./pages/Startorienteering";
 import OrienteeringMap from "./pages/OrienteeringMap";
 import Competitions from "./pages/Competitions";
 import OrienteeringLinks from "./pages/OrienteeringLinks";
+import CoursesOfTheMonth from "./pages/CoursesOfTheMonth";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -31,6 +32,10 @@ const router = createBrowserRouter(
       <Route
         path="/events/orienteering-links"
         element={<OrienteeringLinks />}
+      />
+      <Route
+        path="/events/courses-of-the-month-2024"
+        element={<CoursesOfTheMonth />}
       />
     </Route>
   )
