@@ -14,6 +14,7 @@ import Board from "./pages/Board";
 import "./App.css";
 import Startorienteering from "./pages/Startorienteering";
 import OrienteeringMap from "./pages/OrienteeringMap";
+import Trainings from "./pages/Trainings";
 import Competitions from "./pages/Competitions";
 import OrienteeringLinks from "./pages/OrienteeringLinks";
 import CoursesOfTheMonth from "./pages/CoursesOfTheMonth";
@@ -28,6 +29,7 @@ const router = createBrowserRouter(
       <Route path="/about/board" element={<Board />} />
       <Route path="/about/start-orienteering" element={<Startorienteering />} />
       <Route path="/about/orienteering-map" element={<OrienteeringMap />} />
+      <Route path="/events/trainings" element={<Trainings />} />
       <Route path="/events/competitions" element={<Competitions />} />
       <Route
         path="/events/orienteering-links"
