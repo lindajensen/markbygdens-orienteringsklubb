@@ -1,0 +1,39 @@
+.article {
+  max-width: 800px;
+  margin: 3rem auto;
+  padding: 0 1rem;
+}
+
+.article__meta {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 2rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.article__date {
+  color: var(--text-muted);
+}
+
+.article__content {
+  margin-bottom: 3rem;
+}
+
+.article__content p {
+  margin-bottom: 1.5rem;
+}
+
+.article__link {
+  display: inline-block;
+  color: var(--primary-color);
+  font-weight: 600;
+  text-decoration: none;
+  margin-top: 1rem;
+  transition: color 0.3s ease;
+}
+
+.article__link:hover {
+  color: #b71c1c;
+}

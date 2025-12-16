@@ -10,7 +10,7 @@ interface PageHeroProps {
 function PageHero({ imageUrl, title, subtitle, dark = false }: PageHeroProps) {
   return (
     <section className={`page-hero ${dark ? "page-hero--dark" : ""}`}>
-      <img src={imageUrl} alt="" className="page-hero__image" />
+      {imageUrl && <img src={imageUrl} alt="" className="page-hero__image" />}
       <div className="page-hero__overlay">
         <h1 className="page-hero__title">{title}</h1>
         {subtitle && <p className="page-hero__subtitle">{subtitle}</p>}

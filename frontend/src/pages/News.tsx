@@ -18,7 +18,7 @@ import "./News.css";
 function News() {
   return (
     <>
-      <PageHero imageUrl={newsHero} title="Nyheter" />
+      <PageHero title="Nyheter" />
       <section className="news">
         {/* Featured/Latest News */}
         <article className="news__featured">

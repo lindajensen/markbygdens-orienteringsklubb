@@ -8,6 +8,7 @@ import {
 import MainLayout from "./layouts/MainLayout";
 import HomePage from "./pages/HomePage";
 import News from "./pages/News";
+import NewsArticle from "./pages/NewsArticle";
 import ImagesVideos from "./pages/ImagesVideos";
 import EventGallery from "./pages/EventGallery";
 import Sponsors from "./pages/Sponsors";
@@ -25,6 +26,7 @@ const router = createBrowserRouter(
     <Route path="/" element={<MainLayout />}>
       <Route index element={<HomePage />} />
       <Route path="/news" element={<News />} />
+      <Route path="/news/:slug" element={<NewsArticle />} />
       <Route path="/images-videos" element={<ImagesVideos />} />
       <Route path="/images-videos/:slug" element={<EventGallery />} />
       <Route path="/sponsors" element={<Sponsors />} />
