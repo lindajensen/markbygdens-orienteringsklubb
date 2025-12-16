@@ -196,7 +196,7 @@ function Header() {
 
                   <li className="header__dropdown-item">
                     <Link
-                      to="/events/tavlingar"
+                      to="/arrangemang/tavlingar"
                       className="header__dropdown-link"
                       onClick={() => setIsMenuOpen(false)}
                     >
