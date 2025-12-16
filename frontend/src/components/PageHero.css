@@ -6,6 +6,7 @@
   align-items: center;
   justify-content: center;
   overflow: hidden;
+  background-color: #1a1a1a;
 }
 
 .page-hero__image {
@@ -43,11 +44,6 @@
   text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
 }
 
-.page-hero--dark {
-  background: #1a1a1a;
-  height: 30vh;
-}
-
-.page-hero--dark .page-hero__overlay {
+/* .page-hero--dark .page-hero__overlay {
   background: transparent;
-}
+} */
