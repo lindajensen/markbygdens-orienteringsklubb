@@ -1,4 +1,4 @@
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import PageHero from "../components/PageHero";
 
 import kickoff2026 from "../assets/images/news/kickoff-2026.webp";
@@ -72,9 +72,14 @@ function NewsArticle() {
   if (!article) {
     return (
       <>
-        <PageHero title="Artikel hittades inte" />
-        <div className="article">
-          <p>Tyvärr kunde vi inte hitta artikeln.</p>
+        <div className="article-not-found">
+          <h1 className="article-not-found__title">Artikeln hittades inte</h1>
+          <p className="article-not-found__text">
+            Den artikel du letar efter finns inte.
+          </p>
+          <Link className="article-not-found__link" to="/news">
+            Tillbaka till nyheter
+         </Link>
         </div>
       </>
     );

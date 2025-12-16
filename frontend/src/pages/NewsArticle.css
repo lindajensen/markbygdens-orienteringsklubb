@@ -37,3 +37,68 @@
 .article__link:hover {
   color: #b71c1c;
 }
+
+/* .article-not-found {
+  max-width: 800px;
+  margin: 3rem auto;
+  padding: 3rem 1rem;
+  text-align: center;
+}
+
+.article-not-found__text {
+  font-size: 1.1rem;
+  color: var(--text-muted);
+  margin-bottom: 2rem;
+}
+
+.article-not-found__link {
+  display: inline-block;
+  background: var(--primary-color);
+  color: #fff;
+  padding: 1rem 2rem;
+  border-radius: 4px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: background 0.3s ease;
+}
+
+.article-not-found__link:hover {
+  background: #b71c1c;
+} */
+
+.article-not-found {
+  min-height: 50vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 2rem;
+  margin: 4rem auto;
+  max-width: 800px;
+}
+
+.article-not-found__title {
+  font-size: clamp(2rem, 4vw + 1rem, 3rem);
+  color: var(--primary-color);
+  margin-bottom: 0.5rem;
+}
+
+.article-not-found__subtitle {
+  margin-bottom: 2rem;
+}
+
+.article-not-found__link {
+  display: inline-block;
+  background-color: var(--secondary-color);
+  color: var(--accent-color);
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.25rem;
+  font-weight: 600;
+  transition: background-color 0.3s ease;
+}
+
+.article-not-found a:hover {
+  /* background-color: var(--primary-color); */
+  background-color: #2a2a2a;
+}
