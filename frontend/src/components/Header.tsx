@@ -78,7 +78,7 @@ function Header() {
           <ul className="header__nav-list">
             <li className="header__nav-item">
               <Link
-                to="/news"
+                to="/nyheter"
                 className="header__nav-link"
                 onClick={() => setIsMenuOpen(false)}
               >
@@ -88,7 +88,7 @@ function Header() {
 
             <li className="header__nav-item">
               <Link
-                to="/images-videos"
+                to="/bilder-videos"
                 className="header__nav-link"
                 onClick={() => setIsMenuOpen(false)}
               >
@@ -98,7 +98,7 @@ function Header() {
 
             <li className="header__nav-item">
               <Link
-                to="/sponsors"
+                to="/sponsorer"
                 className="header__nav-link"
                 onClick={() => setIsMenuOpen(false)}
               >
@@ -131,7 +131,7 @@ function Header() {
                 >
                   <li className="header__dropdown-item">
                     <Link
-                      to="/about/board"
+                      to="/om/styrelsen"
                       className="header__dropdown-link"
                       onClick={() => setIsMenuOpen(false)}
                     >
@@ -140,7 +140,7 @@ function Header() {
                   </li>
                   <li className="header__dropdown-item">
                     <Link
-                      to="/about/start-orienteering"
+                      to="/om/borja-orientera"
                       className="header__dropdown-link"
                       onClick={() => setIsMenuOpen(false)}
                     >
@@ -149,7 +149,7 @@ function Header() {
                   </li>
                   <li className="header__dropdown-item">
                     <Link
-                      to="/about/orienteering-map"
+                      to="/om/orienteringskartan"
                       className="header__dropdown-link"
                       onClick={() => setIsMenuOpen(false)}
                     >
@@ -186,7 +186,7 @@ function Header() {
                 >
                   <li className="header__dropdown-item">
                     <Link
-                      to="/events/trainings"
+                      to="/arrangemang/traningar"
                       className="header__dropdown-link"
                       onClick={() => setIsMenuOpen(false)}
                     >
@@ -196,7 +196,7 @@ function Header() {
 
                   <li className="header__dropdown-item">
                     <Link
-                      to="/events/competitions"
+                      to="/events/tavlingar"
                       className="header__dropdown-link"
                       onClick={() => setIsMenuOpen(false)}
                     >
@@ -230,7 +230,7 @@ function Header() {
 
                   <li className="header__dropdown-item">
                     <Link
-                      to="/events/orienteering-links"
+                      to="/arrangemang/orienteringslankar"
                       className="header__dropdown-link"
                       onClick={() => setIsMenuOpen(false)}
                     >
@@ -240,7 +240,7 @@ function Header() {
 
                   <li className="header__dropdown-item">
                     <Link
-                      to="/events/courses-of-the-month-2024"
+                      to="/arrangemang/manadens-banor-2024"
                       className="header__dropdown-link"
                       onClick={() => setIsMenuOpen(false)}
                     >

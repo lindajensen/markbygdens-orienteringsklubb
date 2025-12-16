@@ -25,22 +25,22 @@ const router = createBrowserRouter(
   createRoutesFromElements(
     <Route path="/" element={<MainLayout />}>
       <Route index element={<HomePage />} />
-      <Route path="/news" element={<News />} />
-      <Route path="/news/:slug" element={<NewsArticle />} />
-      <Route path="/images-videos" element={<ImagesVideos />} />
-      <Route path="/images-videos/:slug" element={<EventGallery />} />
-      <Route path="/sponsors" element={<Sponsors />} />
-      <Route path="/about/board" element={<Board />} />
-      <Route path="/about/start-orienteering" element={<Startorienteering />} />
-      <Route path="/about/orienteering-map" element={<OrienteeringMap />} />
-      <Route path="/events/trainings" element={<Trainings />} />
-      <Route path="/events/competitions" element={<Competitions />} />
+      <Route path="/nyheter" element={<News />} />
+      <Route path="/nyheter/:slug" element={<NewsArticle />} />
+      <Route path="/bilder-videos" element={<ImagesVideos />} />
+      <Route path="/bilder-videos/:slug" element={<EventGallery />} />
+      <Route path="/sponsorer" element={<Sponsors />} />
+      <Route path="/om/styrelsen" element={<Board />} />
+      <Route path="/om/borja-orientera" element={<Startorienteering />} />
+      <Route path="/om/orienteringskartan" element={<OrienteeringMap />} />
+      <Route path="/arrangemang/traningar" element={<Trainings />} />
+      <Route path="/arrangemang/tavlingar" element={<Competitions />} />
       <Route
-        path="/events/orienteering-links"
+        path="/arrangemang/orienteringslankar"
         element={<OrienteeringLinks />}
       />
       <Route
-        path="/events/courses-of-the-month-2024"
+        path="/arrangemang/manadens-banor-2024"
         element={<CoursesOfTheMonth />}
       />
     </Route>
