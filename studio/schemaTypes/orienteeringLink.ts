@@ -25,7 +25,6 @@ export default defineType({
       title: 'Description',
       type: 'text',
       description: 'Brief description of the organization',
-      validation: (Rule) => Rule.required(),
     }),
     defineField({
       name: 'url',
