@@ -17,6 +17,8 @@ function News() {
   const [error, setError] = useState<string | null>(null);
   const [isLoading, setIsLoading] = useState(false);
 
+  const DEFAULT_IMAGE = "/src/assets/images/default-news.png";
+
   async function fetchNews() {
     setIsLoading(true);
     setError(null);
@@ -95,7 +97,7 @@ function News() {
           </div>
           <h2 className="news__empty-title">Inga nyheter att visa</h2>
           <p className="news__empty-text">
-            Nya artiklar dyker upp här när de publiceras
+            Nya artiklar dyker upp här när de publiceras.
           </p>
         </div>
       )}
@@ -110,7 +112,10 @@ function News() {
               className="news__featured-link"
             >
               <figure className="news__featured-image">
-                <img src={news[0].mainImage.asset.url} alt={news[0].title} />
+                <img
+                  src={news[0].mainImage?.asset?.url || DEFAULT_IMAGE}
+                  alt={news[0].title}
+                />
                 <time
                   className="news__date-badge"
                   dateTime={news[0].publishedAt}
@@ -136,7 +141,7 @@ function News() {
                 >
                   <figure className="news__card-image">
                     <img
-                      src={article.mainImage.asset.url}
+                      src={article.mainImage?.asset?.url || DEFAULT_IMAGE}
                       alt={article.title}
                     />
                     <time

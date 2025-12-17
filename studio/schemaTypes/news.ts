@@ -31,6 +31,7 @@ export default defineType({
       name: 'mainImage',
       title: 'Main image',
       type: 'image',
+      description: 'If no image is selected, a default club logo image will be used.',
       options: {
         hotspot: true,
       },
