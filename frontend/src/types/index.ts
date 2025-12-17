@@ -13,7 +13,7 @@ export interface Category {
   };
 }
 
-export interface NewsArticle {
+export interface NewsItem {
   _id: string;
   title: string;
   slug: {
