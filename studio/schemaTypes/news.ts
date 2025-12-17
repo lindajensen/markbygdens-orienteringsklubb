@@ -94,7 +94,6 @@ export default defineType({
       title: 'Category',
       type: 'reference',
       to: [{type: 'category'}],
-      validation: (Rule) => Rule.required(),
     }),
     defineField({
       name: 'tags',
