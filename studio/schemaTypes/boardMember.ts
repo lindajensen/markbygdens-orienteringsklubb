@@ -17,5 +17,24 @@ export default defineType({
       type: 'string',
       validation: (Rule) => Rule.required(),
     }),
+    defineField({
+      name: 'category',
+      title: 'Category',
+      type: 'string',
+      options: {
+        list: [
+          {title: 'Styrelseposition', value: 'board'},
+          {title: 'Ledamot/Suppleant', value: 'member'},
+        ],
+      },
+      validation: (Rule) => Rule.required(),
+    }),
+    defineField({
+      name: 'order',
+      title: 'Display Order',
+      type: 'number',
+      description: 'Order in which board members appears',
+      validation: (Rule) => Rule.required().min(0),
+    }),
   ],
 })
