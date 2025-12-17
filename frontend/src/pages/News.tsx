@@ -1,11 +1,11 @@
 import { useEffect, useState } from "react";
 import { sanityClient } from "../lib/client";
 
-import { NewsArticle } from "../types";
+import { NewsItem } from "../types";
 import { formatDate } from "../utils/formatDate";
 
-import { IoNewspaperOutline } from "react-icons/io5";
 import { IoWarningOutline } from "react-icons/io5";
+import { IoNewspaperOutline } from "react-icons/io5";
 
 import PageHero from "../components/PageHero";
 import "./News.css";
@@ -13,7 +13,7 @@ import "./News.css";
 // import newsHero from "../assets/images/heroes/board-hero.webp";
 
 function News() {
-  const [news, setNews] = useState<NewsArticle[]>([]);
+  const [news, setNews] = useState<NewsItem[]>([]);
   const [error, setError] = useState<string | null>(null);
   const [isLoading, setIsLoading] = useState(false);
 
@@ -45,7 +45,7 @@ function News() {
       is_featured
     }`;
 
-      const data = await sanityClient.fetch<NewsArticle[]>(query);
+      const data = await sanityClient.fetch<NewsItem[]>(query);
 
       setNews(data);
     } catch (error) {
