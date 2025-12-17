@@ -33,3 +33,10 @@ export interface NewsItem {
   tags?: string[];
   is_featured: boolean;
 }
+
+export interface BoardMember {
+  _id: string;
+  name: string;
+  role: string;
+  category: string;
+}
