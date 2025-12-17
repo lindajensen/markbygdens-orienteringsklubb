@@ -10,7 +10,7 @@ function Trainings() {
 
       <article className="trainings">
         <p className="trainings__intro">
-          Här hittar du alla träningar och events för våren 2025. Välkommen!
+          Här hittar du alla träningar och events för våren 2024. Välkommen!
         </p>
 
         <div className="trainings__months">
