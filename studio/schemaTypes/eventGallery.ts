@@ -12,6 +12,12 @@ export default defineType({
       validation: (Rule) => Rule.required(),
     }),
     defineField({
+      name: 'eventLabel',
+      title: 'Event Label',
+      type: 'string',
+      description: 'E.g. "O-EVENT · DAG 1"',
+    }),
+    defineField({
       name: 'slug',
       title: 'Slug',
       type: 'slug',
@@ -24,7 +30,6 @@ export default defineType({
       name: 'eventDate',
       title: 'Event Date',
       type: 'date',
-      validation: (Rule) => Rule.required(),
     }),
     defineField({
       name: 'description',
