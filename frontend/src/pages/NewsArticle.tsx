@@ -77,9 +77,9 @@ function NewsArticle() {
           <p className="article-not-found__text">
             Den artikel du letar efter finns inte.
           </p>
-          <Link className="article-not-found__link" to="/news">
+          <Link className="article-not-found__link" to="/nyheter">
             Tillbaka till nyheter
-         </Link>
+          </Link>
         </div>
       </>
     );

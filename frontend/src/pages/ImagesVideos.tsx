@@ -14,7 +14,7 @@ function ImagesVideos() {
 
       <section className="gallery">
         <div className="gallery__grid">
-          <Link to="/images-videos/sprint-by-night" className="gallery__card">
+          <Link to="/bilder-videos/sprint-by-night" className="gallery__card">
             <img
               src={sprintByNight}
               alt="Deltagare i Sprint by Night evenemanget"
@@ -25,7 +25,7 @@ function ImagesVideos() {
             </div>
           </Link>
 
-          <Link to="/images-videos/downhill-sprint" className="gallery__card">
+          <Link to="/bilder-videos/downhill-sprint" className="gallery__card">
             <div className="gallery__placeholder">
               <p>Bilder kommer snart</p>
             </div>
@@ -35,7 +35,7 @@ function ImagesVideos() {
             </div>
           </Link>
 
-          <Link to="/images-videos/zoorientering" className="gallery__card">
+          <Link to="/bilder-videos/zoorientering" className="gallery__card">
             <img
               src={zoorientering}
               alt="Deltagare i Zoorienterings evenemanget"

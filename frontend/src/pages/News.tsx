@@ -22,7 +22,7 @@ function News() {
       <section className="news">
         {/* Featured/Latest News */}
         <article className="news__featured">
-          <a href="/news/kickoff2026" className="news__featured-link">
+          <a href="/nyheter/kickoff2026" className="news__featured-link">
             <figure className="news__featured-image">
               <img src={kickoff2026} alt="Kickoff" />
               <time className="news__date-badge" dateTime="2025-12-15">
@@ -44,7 +44,10 @@ function News() {
         {/* Other News */}
         <div className="news__grid">
           <article className="news__card">
-            <a href="/news/markbygdens-ok-flitpris" className="news__card-link">
+            <a
+              href="/nyheter/markbygdens-ok-flitpris"
+              className="news__card-link"
+            >
               <figure className="news__card-image">
                 <img src={flitpris2025} alt="Markbygdens OK flitpris" />
                 <time className="news__card-date" dateTime="2025-09-19">
@@ -64,7 +67,7 @@ function News() {
           </article>
 
           <article className="news__card">
-            <a href="/news/25-manna" className="news__card-link">
+            <a href="/nyheter/25-manna" className="news__card-link">
               <figure className="news__card-image">
                 <img src={manna2025} alt="25-Manna" />
                 <time className="news__card-date" dateTime="2025-08-28">
@@ -81,7 +84,7 @@ function News() {
           </article>
 
           <article className="news__card">
-            <a href="/news/dm-stafett" className="news__card-link">
+            <a href="/nyheter/dm-stafett" className="news__card-link">
               <figure className="news__card-image">
                 <img src={dmStafett2025} alt="DM-Stafett" />
                 <time className="news__card-date" dateTime="2025-08-22">
@@ -98,7 +101,7 @@ function News() {
           </article>
 
           <article className="news__card">
-            <a href="/news/km-sprint" className="news__card-link">
+            <a href="/nyheter/km-sprint" className="news__card-link">
               <figure className="news__card-image">
                 <img src={kmSprint2025} alt="KM sprint" />
                 <time className="news__card-date" dateTime="2025-08-13">
@@ -115,7 +118,7 @@ function News() {
           </article>
 
           <article className="news__card">
-            <a href="/news/pm-tjoget" className="news__card-link">
+            <a href="/nyheter/pm-tjoget" className="news__card-link">
               <figure className="news__card-image">
                 <img src={pmTjoget2025} alt="PM Tjoget" />
                 <time className="news__card-date" dateTime="2025-06-29">
@@ -132,7 +135,7 @@ function News() {
           </article>
 
           <article className="news__card">
-            <a href="/news/minitjoget" className="news__card-link">
+            <a href="/nyheter/minitjoget" className="news__card-link">
               <figure className="news__card-image">
                 <img src={minitjoget2025} alt="Minitjoget" />
                 <time className="news__card-date" dateTime="2025-06-09">
@@ -150,7 +153,7 @@ function News() {
           </article>
 
           <article className="news__card">
-            <a href="/news/kladshoppen" className="news__card-link">
+            <a href="/nyheter/kladshoppen" className="news__card-link">
               <figure className="news__card-image">
                 <img src={kladshoppen2025} alt="Klädshoppen" />
                 <time className="news__card-date" dateTime="2025-05-30">
@@ -167,7 +170,7 @@ function News() {
           </article>
 
           <article className="news__card">
-            <a href="/news/tjoget2025" className="news__card-link">
+            <a href="/nyheter/tjoget2025" className="news__card-link">
               <figure className="news__card-image">
                 <img src={tjoget2025} alt="Tjoget 2025" />
                 <time className="news__card-date" dateTime="2025-05-30">
@@ -184,7 +187,7 @@ function News() {
           </article>
 
           <article className="news__card">
-            <a href="/news/klubblager" className="news__card-link">
+            <a href="/nyheter/klubblager" className="news__card-link">
               <figure className="news__card-image">
                 <img src={klubblager2025} alt="Klubbläger" />
                 <time className="news__card-date" dateTime="2025-04-29">
@@ -204,7 +207,7 @@ function News() {
           </article>
 
           <article className="news__card">
-            <a href="/news/kickoff2025" className="news__card-link">
+            <a href="/nyheter/kickoff2025" className="news__card-link">
               <figure className="news__card-image">
                 <img src={kickoff2025} alt="Kickoff 2025" />
                 <time className="news__card-date" dateTime="2025-01-12">
