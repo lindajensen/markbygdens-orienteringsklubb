@@ -71,6 +71,13 @@ export default defineType({
         },
       ],
     }),
+    defineField({
+      name: 'order',
+      title: 'Display Order',
+      type: 'number',
+      description: 'Order in gallery overview',
+      validation: (Rule) => Rule.required().min(0),
+    }),
   ],
   preview: {
     select: {
