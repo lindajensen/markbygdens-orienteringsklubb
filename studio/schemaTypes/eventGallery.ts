@@ -40,11 +40,11 @@ export default defineType({
       name: 'coverImage',
       title: 'Cover Image',
       type: 'image',
-      description: 'Main image shown in gallery overview',
+      description:
+        'Main image shown in gallery overview. If empty, placeholder image will be shown.',
       options: {
         hotspot: true,
       },
-      validation: (Rule) => Rule.required(),
     }),
     defineField({
       name: 'images',
@@ -70,7 +70,6 @@ export default defineType({
           ],
         },
       ],
-      validation: (Rule) => Rule.required().min(1),
     }),
   ],
   preview: {
