@@ -1,91 +1,122 @@
+import { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
+import { sanityClient } from "../lib/client";
+
+import { GalleryEvent } from "../types";
+
+import { IoWarningOutline, IoImagesOutline } from "react-icons/io5";
+
 import PageHero from "../components/PageHero";
-
-import sprintByNight1 from "../assets/images/gallery/sprint-by-night/sprint-by-night-1.jpeg";
-import sprintByNight2 from "../assets/images/gallery/sprint-by-night/sprint-by-night-2.jpeg";
-import sprintByNight3 from "../assets/images/gallery/sprint-by-night/sprint-by-night-3.jpeg";
-import sprintByNight4 from "../assets/images/gallery/sprint-by-night/sprint-by-night-4.jpeg";
-import sprintByNight5 from "../assets/images/gallery/sprint-by-night/sprint-by-night-5.jpeg";
-import sprintByNight6 from "../assets/images/gallery/sprint-by-night/sprint-by-night-6.jpeg";
-import sprintByNight7 from "../assets/images/gallery/sprint-by-night/sprint-by-night-7.jpeg";
-import sprintByNight8 from "../assets/images/gallery/sprint-by-night/sprint-by-night-8.jpeg";
-import sprintByNight9 from "../assets/images/gallery/sprint-by-night/sprint-by-night-9.jpeg";
-import sprintByNight10 from "../assets/images/gallery/sprint-by-night/sprint-by-night-10.jpeg";
-import sprintByNight11 from "../assets/images/gallery/sprint-by-night/sprint-by-night-11.jpeg";
-import sprintByNight12 from "../assets/images/gallery/sprint-by-night/sprint-by-night-12.jpeg";
-
-import zoorientering1 from "../assets/images/gallery/zoorientering/zoorientering-1.jpeg";
-import zoorientering2 from "../assets/images/gallery/zoorientering/zoorientering-2.jpeg";
-import zoorientering3 from "../assets/images/gallery/zoorientering/zoorientering-3.jpeg";
-import zoorientering4 from "../assets/images/gallery/zoorientering/zoorientering-4.jpeg";
-import zoorientering5 from "../assets/images/gallery/zoorientering/zoorientering-5.jpeg";
-import zoorientering6 from "../assets/images/gallery/zoorientering/zoorientering-6.jpeg";
-import "./ImagesVideos.css";
 
 import "./EventGallery.css";
 
 function EventGallery() {
   const { slug } = useParams();
 
-  const events = {
-    "sprint-by-night": {
-      title: "Sprint by Night",
-      images: [
-        sprintByNight1,
-        sprintByNight2,
-        sprintByNight3,
-        sprintByNight4,
-        sprintByNight5,
-        sprintByNight6,
-        sprintByNight7,
-        sprintByNight8,
-        sprintByNight9,
-        sprintByNight10,
-        sprintByNight11,
-        sprintByNight12,
-      ],
-    },
-    zoorientering: {
-      title: "Zoorientering",
-      images: [
-        zoorientering1,
-        zoorientering2,
-        zoorientering3,
-        zoorientering4,
-        zoorientering5,
-        zoorientering6,
-      ],
-    },
-  };
+  const [event, setEvent] = useState<GalleryEvent | null>(null);
+  const [error, setError] = useState<string | null>(null);
+  const [isLoading, setIsLoading] = useState(false);
 
-  const event = events[slug as keyof typeof events];
+  async function fetchEvent() {
+    setIsLoading(true);
+    setError(null);
 
-  if (!event) {
-    return (
-      <div className="event-not-found">
-        <h1 className="event-not-found__title">Event hittades inte</h1>
-        <p className="event-not-found__subtitle">
-          Det event du letar efter finns inte.
-        </p>
-        <Link className="event-not-found__link" to="/images-videos">
-          Tillbaka till galleriet
-        </Link>
-      </div>
-    );
+    try {
+      const query = `*[_type == "eventGallery" && slug.current == $slug][0]{
+        _id,
+        title,
+        slug,
+        images[]{
+          asset->{
+            url
+          }
+        }
+      }`;
+
+      const data = await sanityClient.fetch<GalleryEvent>(query, { slug });
+
+      setEvent(data);
+    } catch (error) {
+      console.error(error);
+      if (error instanceof Error) {
+        setError(error.message);
+      } else {
+        setError("Ett oväntat fel uppstod");
+      }
+    } finally {
+      setIsLoading(false);
+    }
   }
+
+  useEffect(() => {
+    fetchEvent();
+  }, [slug]);
 
   return (
     <>
-      <PageHero title={event.title} dark />
+      {event && <PageHero title={event.title} dark />}
 
-      <section className="gallery">
-        <div className="gallery__grid">
-          {event.images.map((image, index) => (
-            <div className="gallery__item" key={index}>
-              <img src={image} alt={`${event.title} bild ${index + 1}`} />
-            </div>
-          ))}
+      {isLoading && (
+        <div className="event__loading">
+          <div className="event__spinner"></div>
+          <p>Laddar galleri...</p>
         </div>
+      )}
+
+      {error && (
+        <div className="event__error">
+          <div className="event__error-icon">
+            <IoWarningOutline size={60} color="#d32f2f" />
+          </div>
+          <h3 className="event__error-title">Kunde inte ladda galleriet</h3>
+          <p className="event__error-text">{error}</p>
+          <button onClick={fetchEvent} className="event__error-button">
+            Försök igen
+          </button>
+        </div>
+      )}
+
+      {!event && !isLoading && !error && (
+        <div className="event__empty">
+          <div className="event__empty-illustration">
+            <IoImagesOutline size={60} />
+          </div>
+          <h2 className="event__empty-title">Galleri hittades inte</h2>
+          <p className="event__empty-text">
+            Detta evenemang kunde inte hittas.
+          </p>
+          <Link to="/bilder-videos" className="event__error-button">
+            Tillbaka till gallerier
+          </Link>
+        </div>
+      )}
+
+      <section className="event">
+        {event && event.images && event.images.length > 0 ? (
+          <div className="event__grid">
+            {event.images.map((image, index) => (
+              <div className="event__item" key={index}>
+                <img
+                  src={image.asset.url}
+                  alt={image.alt || `${event.title} bild ${index + 1}`}
+                />
+                {image.caption && (
+                  <p className="event__caption">{image.caption}</p>
+                )}
+              </div>
+            ))}
+          </div>
+        ) : (
+          <div className="event__no-images">
+            <div className="event__no-images-illustration">
+              <IoImagesOutline size={80} />
+            </div>
+            <h3 className="event__no-images-title">Inga bilder ännu</h3>
+            <p className="event__no-images-text">
+              Bilder från detta evenemang kommer läggas till snart
+            </p>
+          </div>
+        )}
       </section>
     </>
   );

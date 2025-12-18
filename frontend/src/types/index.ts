@@ -40,3 +40,25 @@ export interface BoardMember {
   role: string;
   category: string;
 }
+
+export interface GalleryEvent {
+  _id: string;
+  title: string;
+  eventLabel?: string;
+  slug: {
+    current: string;
+  };
+  eventDate?: string;
+  description?: string;
+  coverImage?: {
+    asset: {
+      url: string;
+    };
+    alt?: string;
+  };
+  images?: {
+    asset: { url: string };
+    alt?: string;
+    caption?: string;
+  }[];
+}

@@ -4,8 +4,7 @@ import { sanityClient } from "../lib/client";
 import { NewsItem } from "../types";
 import { formatDate } from "../utils/formatDate";
 
-import { IoWarningOutline } from "react-icons/io5";
-import { IoNewspaperOutline } from "react-icons/io5";
+import { IoWarningOutline, IoNewspaperOutline } from "react-icons/io5";
 
 import PageHero from "../components/PageHero";
 import "./News.css";
