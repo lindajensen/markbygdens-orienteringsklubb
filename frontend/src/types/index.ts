@@ -62,3 +62,38 @@ export interface GalleryEvent {
     caption?: string;
   }[];
 }
+
+export interface LinkItem {
+  _id: string;
+  name: string;
+  logo: {
+    asset: {
+      url: string;
+    };
+  };
+  description: string;
+  url: string;
+  category: "federation" | "club";
+  order: number;
+}
+
+export interface SponsorItem {
+  _id: string;
+  name: string;
+  logo: {
+    asset: {
+      url: string;
+    };
+  };
+  website?: string;
+  order: number;
+}
+
+export interface TrainingItem {
+  _id: string;
+  title: string;
+  date: string;
+  location: string;
+  description: string;
+  category: string;
+}

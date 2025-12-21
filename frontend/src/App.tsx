@@ -17,6 +17,7 @@ import "./App.css";
 import Startorienteering from "./pages/Startorienteering";
 import OrienteeringMap from "./pages/OrienteeringMap";
 import Trainings from "./pages/Trainings";
+import TrainingsYear from "./pages/TrainingsYear";
 import Competitions from "./pages/Competitions";
 import OrienteeringLinks from "./pages/OrienteeringLinks";
 import CoursesOfTheMonth from "./pages/CoursesOfTheMonth";
@@ -34,6 +35,7 @@ const router = createBrowserRouter(
       <Route path="/om/borja-orientera" element={<Startorienteering />} />
       <Route path="/om/orienteringskartan" element={<OrienteeringMap />} />
       <Route path="/arrangemang/traningar" element={<Trainings />} />
+      <Route path="/arrangemang/traningar/:year" element={<TrainingsYear />} />
       <Route path="/arrangemang/tavlingar" element={<Competitions />} />
       <Route
         path="/arrangemang/orienteringslankar"

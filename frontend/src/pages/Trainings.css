@@ -1,60 +1,51 @@
-.trainings {
-  max-width: 1200px;
-  margin: 3rem auto;
-  padding: 0 1rem;
+.trainings-years {
+  max-width: 500px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
 }
 
-.trainings__intro {
-  font-size: clamp(1rem, 1.5vw + 0.5rem, 1.2rem);
-  color: var(--text-muted);
-  max-width: 800px;
-  margin: 0 auto 2rem;
+.trainings-years > p {
   text-align: center;
-}
-
-.trainings__months {
-  display: flex;
-  flex-direction: column;
-  gap: 3rem;
-}
-
-.trainings__month {
-  background-color: var(--accent-color);
-  padding: 2rem;
-  border-radius: 8px;
-}
-
-.trainings__month-title {
-  color: var(--primary-color);
   margin-bottom: 2rem;
-  padding-bottom: 0.5rem;
-  border-bottom: 2px solid var(--primary-color);
 }
 
-.trainings__events {
+.trainings-years__grid {
   display: flex;
   flex-direction: column;
-  gap: 1.5rem;
+  gap: 0.5rem;
 }
 
-.trainings__event {
+.year-card {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 1.5rem;
   background-color: #fff;
-  padding: 1.5rem;
-  border-radius: 8px;
-  border-left: 4px solid var(--primary-color);
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  border-left: 3px solid var(--primary-color);
+  transition: all 0.2s ease;
 }
 
-.trainings__event-header {
-  margin-bottom: 0.75rem;
+.year-card:hover {
+  background: var(--accent-color);
+  padding-left: 2rem;
 }
 
-.trainings__event-date {
-  font-weight: 600;
+.year-card h2 {
+  margin: 0;
+}
+
+.year-card::after {
+  content: "→";
   color: var(--primary-color);
-  font-size: 1.1rem;
+  font-size: 1.2rem;
 }
 
-.trainings__event-description {
-  line-height: 1.6;
+@media (min-width: 768px) {
+  .trainings-years {
+    padding: 3rem 1rem;
+  }
+
+  .year-card {
+    padding: 1.25rem 2rem;
+  }
 }
