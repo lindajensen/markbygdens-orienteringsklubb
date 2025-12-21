@@ -18,7 +18,7 @@ export default defineType({
       options: {
         hotspot: true,
       },
-      validation: (Rule) => Rule.required(),
+      description: 'If no logo is selected, a default compass icon will be used.',
     }),
     defineField({
       name: 'description',
