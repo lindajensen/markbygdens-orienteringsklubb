@@ -1,4 +1,3 @@
-/* Gallery Section */
 .gallery {
   max-width: 1200px;
   margin: 4rem auto;
@@ -9,6 +8,8 @@
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 2rem;
+  max-width: 1000px;
+  margin: 0 auto;
 }
 
 .gallery__card {
@@ -61,6 +62,106 @@
 .gallery__title {
   color: var(--primary-color);
   margin: 0;
+}
+
+.gallery__loading {
+  max-width: 500px;
+  margin: 4rem auto;
+  padding: 3rem;
+  text-align: center;
+}
+
+.gallery__spinner {
+  width: 40px;
+  height: 40px;
+  margin: 0 auto 1rem;
+  border: 4px solid #f5f5f5;
+  border-top: 4px solid var(--primary-color);
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.gallery__loading p {
+  color: var(--text-muted);
+  font-size: 1rem;
+}
+
+.gallery__error {
+  max-width: 500px;
+  margin: 4rem auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+.gallery__error-icon {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+.gallery__error-title {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  color: var(--primary-color);
+}
+
+.gallery__error-text {
+  font-size: 1rem;
+  color: var(--text-muted);
+  margin-bottom: 1.5rem;
+}
+
+.gallery__error-button {
+  background-color: var(--primary-color);
+  color: #fff;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 4px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.gallery__error-button:hover {
+  background: #b71c1c;
+}
+
+.gallery__empty {
+  max-width: 500px;
+  margin: 4rem auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+.gallery__empty-illustration {
+  width: 150px;
+  height: 150px;
+  margin: 0 auto 2rem;
+  background: linear-gradient(135deg, #f5f5f5 0%, #e0e0e0 100%);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 5rem;
+  opacity: 0.4;
+}
+
+.gallery__empty-title {
+  margin-bottom: 0.5rem;
+}
+
+.gallery__empty-text {
+  font-size: 1rem;
+  color: var(--text-muted);
 }
 
 @media (min-width: 1000px) {

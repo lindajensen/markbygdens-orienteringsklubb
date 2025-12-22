@@ -196,7 +196,7 @@ function Header() {
 
                   <li className="header__dropdown-item">
                     <Link
-                      to="/events/tavlingar"
+                      to="/arrangemang/tavlingar"
                       className="header__dropdown-link"
                       onClick={() => setIsMenuOpen(false)}
                     >
@@ -240,11 +240,11 @@ function Header() {
 
                   <li className="header__dropdown-item">
                     <Link
-                      to="/arrangemang/manadens-banor-2024"
+                      to="/arrangemang/manadens-banor"
                       className="header__dropdown-link"
                       onClick={() => setIsMenuOpen(false)}
                     >
-                      Månadens banor 2024
+                      Månadens banor
                     </Link>
                   </li>
                 </ul>

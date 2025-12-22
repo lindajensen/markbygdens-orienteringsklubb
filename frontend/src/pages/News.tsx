@@ -1,229 +1,166 @@
+import { useEffect, useState } from "react";
+import { sanityClient } from "../lib/client";
+
+import { NewsItem } from "../types";
+import { formatDate } from "../utils/formatDate";
+
+import { IoWarningOutline, IoNewspaperOutline } from "react-icons/io5";
+
 import PageHero from "../components/PageHero";
-import newsHero from "../assets/images/heroes/board-hero.webp";
-
-import kickoff2026 from "../assets/images/news/kickoff-2026.webp";
-import flitpris2025 from "../assets/images/news/flitpris-2025.webp";
-import manna2025 from "../assets/images/news/25-manna-2025.webp";
-import dmStafett2025 from "../assets/images/news/dm-stafett-2025.webp";
-import kmSprint2025 from "../assets/images/news/km-sprint-2025.webp";
-import pmTjoget2025 from "../assets/images/news/pm-tjoget-2025.webp";
-import minitjoget2025 from "../assets/images/news/minitjoget-2025.webp";
-import kladshoppen2025 from "../assets/images/news/kladshoppen-2025.png";
-import tjoget2025 from "../assets/images/news/tjoget-2025.webp";
-import klubblager2025 from "../assets/images/news/km-sprint-2025.webp";
-import kickoff2025 from "../assets/images/news/kickoff-2026.webp";
-
 import "./News.css";
 
+// import newsHero from "../assets/images/heroes/board-hero.webp";
+
 function News() {
+  const [news, setNews] = useState<NewsItem[]>([]);
+  const [error, setError] = useState<string | null>(null);
+  const [isLoading, setIsLoading] = useState(false);
+
+  const DEFAULT_IMAGE = "/src/assets/images/default-news.png";
+
+  async function fetchNews() {
+    setIsLoading(true);
+    setError(null);
+
+    try {
+      const query = `*[_type == "news"] | order(publishedAt desc){
+      _id,
+      title,
+      slug,
+      publishedAt,
+      mainImage{
+        asset->{
+          url
+        },
+        alt
+      },
+      teaser,
+      body,
+      externalLinks,
+      category->{
+        _id,
+        title,
+        slug
+      },
+      tags,
+      is_featured
+    }`;
+
+      const data = await sanityClient.fetch<NewsItem[]>(query);
+
+      setNews(data);
+    } catch (error) {
+      console.error(error);
+      if (error instanceof Error) {
+        setError(error.message);
+      } else {
+        setError("Ett oväntat fel uppstod");
+      }
+    } finally {
+      setIsLoading(false);
+    }
+  }
+
+  useEffect(() => {
+    fetchNews();
+  }, []);
+
   return (
     <>
       <PageHero title="Nyheter" />
-      <section className="news">
-        {/* Featured/Latest News */}
-        <article className="news__featured">
-          <a href="/news/kickoff2026" className="news__featured-link">
-            <figure className="news__featured-image">
-              <img src={kickoff2026} alt="Kickoff" />
-              <time className="news__date-badge" dateTime="2025-12-15">
-                15 december 2025
-              </time>
-            </figure>
-            <div className="news__featured-content">
-              <h2 className="news__featured-title">
-                Kickoff och Markbygdsgalan
-              </h2>
-              <p className="news__featured-excerpt">
-                Äntligen så närmar sig säsongen 2026 och det är hög tid...
-              </p>
-              <span className="news__read-more">Läs mer →</span>
-            </div>
-          </a>
-        </article>
 
-        {/* Other News */}
-        <div className="news__grid">
-          <article className="news__card">
-            <a href="/news/markbygdens-ok-flitpris" className="news__card-link">
-              <figure className="news__card-image">
-                <img src={flitpris2025} alt="Markbygdens OK flitpris" />
-                <time className="news__card-date" dateTime="2025-09-19">
-                  19 september 2025
-                </time>
-              </figure>
-              <div className="news__card-content">
-                <h3 className="news__card-title">
-                  Markbygdens OK flitpris ställning
-                </h3>
-                <p className="news__card-excerpt">
-                  Nu finns en sammanställning för ställningen i vårt
-                  nyinstiftade flitpris...
-                </p>
-              </div>
-            </a>
-          </article>
-
-          <article className="news__card">
-            <a href="/news/25-manna" className="news__card-link">
-              <figure className="news__card-image">
-                <img src={manna2025} alt="25-Manna" />
-                <time className="news__card-date" dateTime="2025-08-28">
-                  28 AUGUSTI 2025
-                </time>
-              </figure>
-              <div className="news__card-content">
-                <h3 className="news__card-title">25-Manna</h3>
-                <p className="news__card-excerpt">
-                  25-manna går i år av stapeln helgen 11-13 oktober strax...
-                </p>
-              </div>
-            </a>
-          </article>
-
-          <article className="news__card">
-            <a href="/news/dm-stafett" className="news__card-link">
-              <figure className="news__card-image">
-                <img src={dmStafett2025} alt="DM-Stafett" />
-                <time className="news__card-date" dateTime="2025-08-22">
-                  22 AUGUSTI 2025
-                </time>
-              </figure>
-              <div className="news__card-content">
-                <h3 className="news__card-title">DM-Stafett 7/9</h3>
-                <p className="news__card-excerpt">
-                  Nu drar det ihop sig inför DM i medeldistans/stafett som...
-                </p>
-              </div>
-            </a>
-          </article>
-
-          <article className="news__card">
-            <a href="/news/km-sprint" className="news__card-link">
-              <figure className="news__card-image">
-                <img src={kmSprint2025} alt="KM sprint" />
-                <time className="news__card-date" dateTime="2025-08-13">
-                  13 AUGUSTI 2025
-                </time>
-              </figure>
-              <div className="news__card-content">
-                <h3 className="news__card-title">KM Sprint 21/8</h3>
-                <p className="news__card-excerpt">
-                  Välkomna att springa vårt öppna KM vid Vävarehallen i Skene...
-                </p>
-              </div>
-            </a>
-          </article>
-
-          <article className="news__card">
-            <a href="/news/pm-tjoget" className="news__card-link">
-              <figure className="news__card-image">
-                <img src={pmTjoget2025} alt="PM Tjoget" />
-                <time className="news__card-date" dateTime="2025-06-29">
-                  29 Juni 2025
-                </time>
-              </figure>
-              <div className="news__card-content">
-                <h3 className="news__card-title">PM Tjoget</h3>
-                <p className="news__card-excerpt">
-                  Nu finns ett PM för MBOK Tjoget 2025 där laguppställningen...
-                </p>
-              </div>
-            </a>
-          </article>
-
-          <article className="news__card">
-            <a href="/news/minitjoget" className="news__card-link">
-              <figure className="news__card-image">
-                <img src={minitjoget2025} alt="Minitjoget" />
-                <time className="news__card-date" dateTime="2025-06-09">
-                  9 juni 2025
-                </time>
-              </figure>
-              <div className="news__card-content">
-                <h3 className="news__card-title">Minitjoget</h3>
-                <p className="news__card-excerpt">
-                  Nu är det dags att anmäla sig till årets höjdpunkt
-                  Minitjoget...
-                </p>
-              </div>
-            </a>
-          </article>
-
-          <article className="news__card">
-            <a href="/news/kladshoppen" className="news__card-link">
-              <figure className="news__card-image">
-                <img src={kladshoppen2025} alt="Klädshoppen" />
-                <time className="news__card-date" dateTime="2025-05-30">
-                  30 maj 2025
-                </time>
-              </figure>
-              <div className="news__card-content">
-                <h3 className="news__card-title">Minitjoget</h3>
-                <p className="news__card-excerpt">
-                  Nu är äntligen klädshoppen öppen, tyvärr så är det kort...
-                </p>
-              </div>
-            </a>
-          </article>
-
-          <article className="news__card">
-            <a href="/news/tjoget2025" className="news__card-link">
-              <figure className="news__card-image">
-                <img src={tjoget2025} alt="Tjoget 2025" />
-                <time className="news__card-date" dateTime="2025-05-30">
-                  30 maj 2025
-                </time>
-              </figure>
-              <div className="news__card-content">
-                <h3 className="news__card-title">Tjoget 2025</h3>
-                <p className="news__card-excerpt">
-                  Tjoget närmar sig och nu är det dags för att...
-                </p>
-              </div>
-            </a>
-          </article>
-
-          <article className="news__card">
-            <a href="/news/klubblager" className="news__card-link">
-              <figure className="news__card-image">
-                <img src={klubblager2025} alt="Klubbläger" />
-                <time className="news__card-date" dateTime="2025-04-29">
-                  29 april 2025
-                </time>
-              </figure>
-              <div className="news__card-content">
-                <h3 className="news__card-title">
-                  Klubbläger vid sommarlandssprinten
-                </h3>
-                <p className="news__card-excerpt">
-                  Nu finns det en inbjudan till årets Klubbläger vis
-                  Sommarlandssprinten...
-                </p>
-              </div>
-            </a>
-          </article>
-
-          <article className="news__card">
-            <a href="/news/kickoff2025" className="news__card-link">
-              <figure className="news__card-image">
-                <img src={kickoff2025} alt="Kickoff 2025" />
-                <time className="news__card-date" dateTime="2025-01-12">
-                  12 januari 2025
-                </time>
-              </figure>
-              <div className="news__card-content">
-                <h3 className="news__card-title">
-                  Kickoff och Markbygdsgala 25/1
-                </h3>
-                <p className="news__card-excerpt">
-                  Välkomna till årets planeringsdag/kickoff med markbygdsgala på
-                  kvällen. För mer...
-                </p>
-              </div>
-            </a>
-          </article>
+      {isLoading && (
+        <div className="news__loading">
+          <div className="news__spinner"></div>
+          <p>Laddar nyheter...</p>
         </div>
-      </section>
+      )}
+
+      {error && (
+        <div className="news__error">
+          <div className="news__error-icon">
+            <IoWarningOutline size={60} color="#d32f2f" />
+          </div>
+          <h3 className="news__error-title">Kunde inte ladda nyheter</h3>
+          <p className="news__error-text">{error}</p>
+          <button onClick={fetchNews} className="news__error-button">
+            Försök igen
+          </button>
+        </div>
+      )}
+
+      {news.length === 0 && !isLoading && !error && (
+        <div className="news__empty">
+          <div className="news__empty-illustration">
+            <IoNewspaperOutline size={60} />
+          </div>
+          <h2 className="news__empty-title">Inga nyheter att visa</h2>
+          <p className="news__empty-text">
+            Nya artiklar dyker upp här när de publiceras.
+          </p>
+        </div>
+      )}
+
+      {news.length > 0 && (
+        <section className="news">
+          {/* Featured - latest article */}
+
+          <article className="news__featured">
+            <a
+              href={`/nyheter/${news[0].slug.current}`}
+              className="news__featured-link"
+            >
+              <figure className="news__featured-image">
+                <img
+                  src={news[0].mainImage?.asset?.url || DEFAULT_IMAGE}
+                  alt={news[0].title}
+                />
+                <time
+                  className="news__date-badge"
+                  dateTime={news[0].publishedAt}
+                >
+                  {formatDate(news[0].publishedAt)}
+                </time>
+              </figure>
+              <div className="news__featured-content">
+                <h2 className="news__featured-title">{news[0].title}</h2>
+                <p className="news__featured-excerpt">{news[0].teaser}</p>
+                <span className="news__read-more">Läs mer →</span>
+              </div>
+            </a>
+          </article>
+
+          {/* Rest of the articles */}
+          <div className="news__grid">
+            {news.slice(1).map((article) => (
+              <article key={article._id} className="news__card">
+                <a
+                  href={`/nyheter/${article.slug.current}`}
+                  className="news__card-link"
+                >
+                  <figure className="news__card-image">
+                    <img
+                      src={article.mainImage?.asset?.url || DEFAULT_IMAGE}
+                      alt={article.title}
+                    />
+                    <time
+                      className="news__card-date"
+                      dateTime={article.publishedAt}
+                    >
+                      {formatDate(article.publishedAt)}
+                    </time>
+                  </figure>
+                  <div className="news__card-content">
+                    <h3 className="news__card-title">{article.title}</h3>
+                    <p className="news__card-excerpt">{article.teaser}</p>
+                    <span className="news__read-more">Läs mer →</span>
+                  </div>
+                </a>
+              </article>
+            ))}
+          </div>
+        </section>
+      )}
     </>
   );
 }
