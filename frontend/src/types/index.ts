@@ -97,3 +97,28 @@ export interface TrainingItem {
   description: string;
   category: string;
 }
+
+export interface CoursePeriod {
+  dates: string;
+  location: string;
+}
+
+export interface CourseContact {
+  name: string;
+  phone: string;
+}
+
+export interface CourseItem {
+  _id: string;
+  year: number;
+  mapImage?: {
+    asset: {
+      url: string;
+    };
+  };
+  introduction?: string;
+  periods: CoursePeriod[];
+  information?: string[];
+  paymentInfo?: PortableTextBlock[];
+  contacts?: CourseContact[];
+}
