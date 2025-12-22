@@ -75,7 +75,9 @@ export default defineType({
     defineField({
       name: 'paymentInfo',
       title: 'Payment Information',
-      type: 'text',
+      type: 'array',
+      of: [{type: 'block'}],
+      description: 'Payment details and instructions',
     }),
     defineField({
       name: 'contacts',
