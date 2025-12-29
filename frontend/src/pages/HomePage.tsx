@@ -1,7 +1,8 @@
 import Hero from "../components/Hero";
 import FeaturedNews from "../components/FeaturedNews";
-import UpcomingActivities from "../components/UpcomingActivities";
 import CallToAction from "../components/CallToAction";
+import UpcomingActivities from "../components/UpcomingActivities";
+import FriendlyClubs from "../components/FriendlyClubs";
 import Contact from "../components/Contact";
 
 function HomePage() {
@@ -11,6 +12,7 @@ function HomePage() {
       <FeaturedNews />
       <CallToAction />
       <UpcomingActivities />
+      <FriendlyClubs />
       <Contact />
     </>
   );
