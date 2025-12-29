@@ -177,7 +177,7 @@
 
 .upcoming-activities__empty {
   max-width: 500px;
-  margin: 4rem auto;
+  margin: 2rem auto 0 auto;
   padding: 2rem;
   text-align: center;
 }
