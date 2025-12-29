@@ -53,8 +53,8 @@ function Board() {
       <PageHero imageUrl={boardHero} title="Styrelsen" />
 
       {isLoading && (
-        <div className="news__loading">
-          <div className="news__spinner"></div>
+        <div className="board__loading">
+          <div className="board__spinner"></div>
           <p>Laddar styrelsen...</p>
         </div>
       )}

@@ -1,0 +1,237 @@
+.upcoming-activities {
+  max-width: 1200px;
+  margin: 3rem auto 0 auto;
+  padding: 0 1rem;
+}
+
+.upcoming-activities__title {
+  text-align: center;
+  font-size: clamp(1.5rem, 4vw, 2.5rem);
+  margin-bottom: 2rem;
+}
+
+.upcoming-activities__item {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+
+  padding: 1.5rem;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.upcoming-activities__item:last-of-type {
+  border-bottom: none;
+}
+
+.upcoming-activities__date-box {
+  text-align: center;
+  /* background-color: var(--text-dark); */
+  background-color: var(--primary-color);
+  color: #fff;
+  padding: 1rem;
+  border-radius: 8px;
+  width: 100%;
+}
+
+.upcoming-activities__day {
+  font-size: 2rem;
+  font-weight: 700;
+  line-height: 1;
+  display: block;
+}
+
+.upcoming-activities__month {
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  margin-top: 0.25rem;
+  display: block;
+}
+
+.upcoming-activities__content h3 {
+  margin-bottom: 0.5rem;
+}
+
+.upcoming-activities__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+.upcoming-activities__location {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  color: var(--text-muted);
+  font-size: 0.95rem;
+}
+
+.upcoming-activities__location-icon {
+  flex-shrink: 0;
+}
+
+.upcoming-activities__type {
+  background: #f5f5f5;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #4a4a4a;
+  white-space: nowrap;
+  justify-self: start;
+}
+
+.upcoming-activities__cta {
+  text-align: center;
+  margin-top: 1.5rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid #e0e0e0;
+}
+
+.upcoming-activities__button {
+  display: inline-block;
+  padding: 1rem 2rem;
+  background: var(--primary-color);
+  color: #fff;
+  text-decoration: none;
+  border-radius: 4px;
+  font-weight: 600;
+  transition: background 0.3s ease;
+}
+
+.upcoming-activities__button:hover {
+  background: #b71c1c;
+}
+
+.upcoming-activities__loading {
+  max-width: 500px;
+  margin: 0 auto;
+  padding: 3rem;
+  text-align: center;
+}
+
+.upcoming-activities__spinner {
+  width: 40px;
+  height: 40px;
+  margin: 0 auto 1rem;
+  border: 4px solid #f5f5f5;
+  border-top: 4px solid var(--primary-color);
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.upcoming-activities__loading p {
+  color: var(--text-muted);
+  font-size: 1rem;
+}
+
+.upcoming-activities__error {
+  max-width: 500px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+.upcoming-activities__error-icon {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+.upcoming-activities__error-title {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  color: var(--primary-color);
+}
+
+.upcoming-activities__error-text {
+  font-size: 1rem;
+  color: var(--text-muted);
+  margin-bottom: 1.5rem;
+}
+
+.upcoming-activities__error-button {
+  background-color: var(--primary-color);
+  color: #fff;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 4px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.upcoming-activities__error-button:hover {
+  background: #b71c1c;
+}
+
+.upcoming-activities__empty {
+  max-width: 500px;
+  margin: 4rem auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+.upcoming-activities__empty-illustration {
+  width: 150px;
+  height: 150px;
+  margin: 0 auto 2rem;
+  background: linear-gradient(135deg, #f5f5f5 0%, #e0e0e0 100%);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 5rem;
+  opacity: 0.4;
+}
+
+.upcoming-activities__empty-title {
+  margin-bottom: 0.5rem;
+}
+
+.upcoming-activities__empty-text {
+  font-size: 1rem;
+  color: var(--text-muted);
+}
+
+@media (min-width: 768px) {
+  .upcoming-activities {
+    margin: 4rem auto;
+    padding: 3rem 2rem;
+  }
+
+  .upcoming-activities__title {
+    /* font-size: 2.5rem; */
+    margin-bottom: 3rem;
+  }
+
+  .upcoming-activities__item {
+    grid-template-columns: auto 1fr auto;
+    gap: 1.5rem;
+    align-items: center;
+  }
+
+  .upcoming-activities__date-box {
+    min-width: 80px;
+    width: auto;
+  }
+
+  .upcoming-activities__loading {
+    padding: 3rem 2rem;
+  }
+
+  .upcoming-activities__cta {
+    margin-top: 2rem;
+    padding-top: 2rem;
+  }
+}
