@@ -91,17 +91,18 @@
 
 .upcoming-activities__button {
   display: inline-block;
-  padding: 1rem 2rem;
-  background: var(--primary-color);
-  color: #fff;
+  padding: 0.75rem 2rem;
+  background: transparent;
+  border: 2px solid #1a1a1a;
   text-decoration: none;
-  border-radius: 4px;
+  border-radius: 8px;
   font-weight: 600;
-  transition: background 0.3s ease;
+  transition: all 0.3s ease;
 }
 
 .upcoming-activities__button:hover {
-  background: #b71c1c;
+  background: #1a1a1a;
+  color: #fff;
 }
 
 .upcoming-activities__loading {
