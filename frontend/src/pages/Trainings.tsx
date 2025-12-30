@@ -24,8 +24,6 @@ function Trainings() {
         .sort()
         .reverse();
 
-      await new Promise((resolve) => setTimeout(resolve, 5000));
-
       setYears(uniqueYears);
     } catch (error) {
       console.error("Failed to fetch years:", error);
@@ -41,22 +39,23 @@ function Trainings() {
   return (
     <>
       <PageHero imageUrl={trainingsHero} title="Träningar" />
-      <section className="trainings-years">
+
+      <section className="trainings">
         <p>Välj vilket år du vill se träningar för:</p>
 
         {isLoading && (
-          <div className="trainings-years__loading">
-            <div className="trainings-years__spinner"></div>
+          <div className="trainings__loading">
+            <div className="trainings__spinner"></div>
             <p>Laddar...</p>
           </div>
         )}
 
-        <div className="trainings-years__grid">
+        <div className="trainings__grid">
           {years.map((year) => (
             <Link
               key={year}
               to={`/arrangemang/traningar/${year}`}
-              className="training-years-card"
+              className="trainings-card"
             >
               <h2>{year}</h2>
             </Link>

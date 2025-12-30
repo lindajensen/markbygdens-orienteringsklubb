@@ -1,21 +1,21 @@
-.trainings-years {
-  max-width: 500px;
+.trainings {
+  max-width: 800px;
   margin: 0 auto;
   padding: 2rem 1rem;
 }
 
-.trainings-years > p {
+.trainings > p {
   text-align: center;
   margin-bottom: 2rem;
 }
 
-.trainings-years__grid {
+.trainings__grid {
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
 }
 
-.training-years-card {
+.trainings-card {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -25,29 +25,29 @@
   transition: all 0.2s ease;
 }
 
-training-years-card:hover {
+trainings-card:hover {
   background: var(--accent-color);
   padding-left: 2rem;
 }
 
-.training-years-card h2 {
+.trainings-card h2 {
   margin: 0;
 }
 
-.training-years-card::after {
+.trainings-card::after {
   content: "→";
   color: var(--primary-color);
   font-size: 1.2rem;
 }
 
-.trainings-years__loading {
+.trainings__loading {
   max-width: 500px;
   margin: 4rem auto;
   padding: 3rem;
   text-align: center;
 }
 
-.trainings-years__spinner {
+.trainings__spinner {
   width: 40px;
   height: 40px;
   margin: 0 auto 1rem;
@@ -66,17 +66,17 @@ training-years-card:hover {
   }
 }
 
-.trainings-years__loading p {
+.trainings__loading p {
   color: var(--text-muted);
   font-size: 1rem;
 }
 
 @media (min-width: 768px) {
-  .trainings-years {
+  .trainings {
     padding: 3rem 1rem;
   }
 
-  .training-years-card {
+  .training-card {
     padding: 1.25rem 2rem;
   }
 }
