@@ -24,6 +24,8 @@ function Trainings() {
         .sort()
         .reverse();
 
+      await new Promise((resolve) => setTimeout(resolve, 5000));
+
       setYears(uniqueYears);
     } catch (error) {
       console.error("Failed to fetch years:", error);
@@ -42,15 +44,19 @@ function Trainings() {
       <section className="trainings-years">
         <p>Välj vilket år du vill se träningar för:</p>
 
-        //TODO: styling för loading state
-        {isLoading && <p>Laddar...</p>}
+        {isLoading && (
+          <div className="trainings-years__loading">
+            <div className="trainings-years__spinner"></div>
+            <p>Laddar...</p>
+          </div>
+        )}
 
         <div className="trainings-years__grid">
           {years.map((year) => (
             <Link
               key={year}
               to={`/arrangemang/traningar/${year}`}
-              className="year-card"
+              className="training-years-card"
             >
               <h2>{year}</h2>
             </Link>
