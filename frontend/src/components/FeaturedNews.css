@@ -1,7 +1,6 @@
 .featured-news {
   max-width: 1200px;
-  margin: 3rem auto 0 auto;
-
+  margin: 2rem auto 0 auto;
   padding: 0 1rem;
 }
 
@@ -86,6 +85,6 @@
 
 @media (min-width: 768px) {
   .featured-news {
-    margin: 5rem auto;
+    margin: 4rem auto;
   }
 }
