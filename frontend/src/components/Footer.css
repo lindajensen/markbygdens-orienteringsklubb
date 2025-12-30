@@ -1,23 +1,16 @@
 .footer {
-  padding: 1.5rem 1rem;
+  background-color: var(--text-dark);
+  color: #fff;
+  width: 100%;
 }
 
 .footer__container {
   max-width: 1200px;
   margin: 0 auto;
-  padding-top: 2rem;
-  border-top: 1px solid var(--border-color);
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+  padding: 2rem 1rem;
+  text-align: center;
 }
 
-.footer__social-list {
-  display: flex;
-  gap: 1rem;
-  align-items: center;
-}
-
-.footer__social-icon {
-  display: block;
+.footer__text {
+  color: rgba(255, 255, 255, 0.8);
 }
