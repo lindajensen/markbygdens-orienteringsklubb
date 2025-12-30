@@ -1,0 +1,50 @@
+.friendly-clubs {
+  width: 100%;
+  margin: 3rem 0;
+  padding: 3rem 1rem;
+  background-color: var(--accent-color);
+}
+
+.friendly-clubs__container {
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.friendly-clubs__title {
+  text-align: center;
+  font-size: clamp(1.5rem, 4vw, 2.5rem);
+  margin-bottom: 2rem;
+}
+
+.friendly-clubs__logos {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.friendly-clubs__logo {
+  height: 100px;
+  width: auto;
+  transition: transform 0.3s ease;
+}
+
+.friendly-clubs__logo:hover {
+  transform: scale(1.05);
+}
+
+@media (min-width: 768px) {
+  .friendly-clubs {
+    padding: 3rem 2rem;
+  }
+
+  .friendly-clubs__logos {
+    gap: 3rem;
+  }
+
+  .friendly-clubs__logo {
+    height: 120px;
+  }
+}
