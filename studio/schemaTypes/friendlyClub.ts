@@ -15,6 +15,9 @@ export default defineType({
       name: 'logo',
       title: 'Logo',
       type: 'image',
+      options: {
+        hotspot: true,
+      },
       validation: (Rule) => Rule.required(),
     }),
     defineField({

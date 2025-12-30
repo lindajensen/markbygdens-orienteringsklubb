@@ -122,3 +122,14 @@ export interface CourseItem {
   paymentInfo?: PortableTextBlock[];
   contacts?: CourseContact[];
 }
+
+export interface friendlyClubItem {
+  _id: string;
+  name: string;
+  logo: {
+    asset: {
+      url: string;
+    };
+  };
+  order: number;
+}
